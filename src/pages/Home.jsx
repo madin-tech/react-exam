@@ -6,8 +6,19 @@ import "swiper/css";
 import "swiper/css/pagination";
 import vector from "../assets/arrow.svg";
 
+import img1 from "../assets/img1.jpg";
+import img2 from "../assets/img2.jpg";
+import img3 from "../assets/img3.jpg";
+import img4 from "../assets/img4.jpg";
+import img5 from "../assets/img5.jpg";
+import img6 from "../assets/img6.jpg";
+import img7 from "../assets/img7.jpg";
+import img8 from "../assets/img8.jpg";
+
 import { Autoplay, Pagination } from "swiper/modules";
 const Home = () => {
+  const images1 = [img6, img7, img8];
+  const images2 = [img3, img4, img5];
   return (
     <section className="container">
       <div className="hero-pg">
@@ -37,39 +48,50 @@ const Home = () => {
               </Swiper>
             </div>
           </div>
-          <div className="hero-card">
+          <div
+            className="hero-card"
+            style={{
+              backgroundImage: `url(${img2})`,
+              objectFit: `cover`,
+              backgroundPosition: `center`,
+            }}
+          >
             <h4>some Post</h4>
             <p className="hero-card-time">14:08</p>
           </div>
         </div>
         <div className="hero-pg-right">
           <div className="hero-pg-right-left">
-            <div className="hero-card">
-              <h4>some Post</h4>
-              <p className="hero-card-time">14:08</p>
-            </div>
-            <div className="hero-card">
-              <h4>some Post</h4>
-              <p className="hero-card-time">14:08</p>
-            </div>
-            <div className="hero-card">
-              <h4>some Post</h4>
-              <p className="hero-card-time">14:08</p>
-            </div>
+            {images1.map((item, index) => (
+              <div
+                className="hero-card"
+                key={index}
+                style={{
+                  backgroundImage: `url(${item})`,
+                  objectFit: `cover`,
+                  backgroundPosition: `center`,
+                }}
+              >
+                <h4>some Post</h4>
+                <p className="hero-card-time">14:08</p>
+              </div>
+            ))}
           </div>
           <div className="hero-pg-right-left">
-            <div className="hero-card">
-              <h4>some Post</h4>
-              <p className="hero-card-time">14:08</p>
-            </div>
-            <div className="hero-card">
-              <h4>some Post</h4>
-              <p className="hero-card-time">14:08</p>
-            </div>
-            <div className="hero-card">
-              <h4>some Post</h4>
-              <p className="hero-card-time">14:08</p>
-            </div>
+            {images2.map((item, index) => (
+              <div
+                className="hero-card"
+                key={index}
+                style={{
+                  backgroundImage: `url(${item})`,
+                  objectFit: `cover`,
+                  backgroundPosition: `center`,
+                }}
+              >
+                <h4>some Post</h4>
+                <p className="hero-card-time">14:08</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
