@@ -4,11 +4,11 @@ import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import Detail from './pages/Detail';
 import Liked from './pages/Liked';
-import { Context } from './context/Context';
+import { Newcontext } from "./Newcontext/Newcontext";
 const App = () => {
   return (
     <>
-      <Context.Provider>
+      <Newcontext.Provider>
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
@@ -16,7 +16,7 @@ const App = () => {
             <Route path="/likes" element={<Liked />} />
           </Route>
         </Routes>
-      </Context.Provider>
+      </Newcontext.Provider>
     </>
   );
 }
