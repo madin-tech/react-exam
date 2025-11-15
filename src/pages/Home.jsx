@@ -5,6 +5,8 @@ import eye from "../assets/eye2.svg";
 import "swiper/css";
 import "swiper/css/pagination";
 import vector from "../assets/arrow.svg";
+import useFetch from "../hooks/useFetch";
+import { Autoplay, Pagination } from "swiper/modules";
 
 import img1 from "../assets/img1.jpg";
 import img2 from "../assets/img2.jpg";
@@ -14,12 +16,56 @@ import img5 from "../assets/img5.jpg";
 import img6 from "../assets/img6.jpg";
 import img7 from "../assets/img7.jpg";
 import img8 from "../assets/img8.jpg";
+import { useNavigate } from "react-router-dom";
 
-import { Autoplay, Pagination } from "swiper/modules";
+const images1 = [img6, img7, img8];
+const images2 = [img3, img4, img5];
+
 const Home = () => {
-  const images1 = [img6, img7, img8];
-  const images2 = [img3, img4, img5];
-  return (
+  const { data, isLoading, error } = useFetch("https://dummyjson.com/posts");
+  const navigate = useNavigate();
+  if (error) return (
+    <div>
+      <h1>{error}</h1>
+    </div>
+  );
+  console.log(data);
+
+  function openDetail(id) {
+    data.map((card) => {
+      if (card.id == id) {
+        navigate(`/detail/${id}`);
+      }
+    });
+  }
+
+  return isLoading ? (
+    <div className="loadingCards container">
+      {[...Array(30)].map((_, index) => (
+        <div key={index}>
+          <div className="card" aria-hidden="true">
+            <img src="..." className="card-img-top" alt="..." />
+            <div className="card-body">
+              <h5 className="card-title placeholder-glow">
+                <span className="placeholder col-6"></span>
+              </h5>
+              <p className="card-text placeholder-glow">
+                <span className="placeholder col-7"></span>
+                <span className="placeholder col-4"></span>
+                <span className="placeholder col-4"></span>
+                <span className="placeholder col-6"></span>
+                <span className="placeholder col-8"></span>
+              </p>
+              <a
+                className="btn btn-primary disabled placeholder col-6"
+                aria-disabled="true"
+              ></a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  ) : (
     <section className="container">
       <div className="hero-pg">
         <div className="hero-pg-left">
@@ -36,25 +82,21 @@ const Home = () => {
                 modules={[Pagination, Autoplay]}
                 className="mySwiper"
               >
-                <SwiperSlide className="first">Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-                <SwiperSlide>Slide 5</SwiperSlide>
-                <SwiperSlide>Slide 6</SwiperSlide>
-                <SwiperSlide>Slide 7</SwiperSlide>
-                <SwiperSlide>Slide 8</SwiperSlide>
-                <SwiperSlide>Slide 9</SwiperSlide>
+                {data.map((item) => (
+                  <SwiperSlide
+                    key={item.id}
+                    className="first"
+                    style={{ backgroundImage: `url(${img2})` }}
+                  >
+                    {item.title}
+                  </SwiperSlide>
+                ))}
               </Swiper>
             </div>
           </div>
           <div
             className="hero-card"
-            style={{
-              backgroundImage: `url(${img2})`,
-              objectFit: `cover`,
-              backgroundPosition: `center`,
-            }}
+            style={{ backgroundImage: `url(${img1})` }}
           >
             <h4>some Post</h4>
             <p className="hero-card-time">14:08</p>
@@ -63,14 +105,9 @@ const Home = () => {
         <div className="hero-pg-right">
           <div className="hero-pg-right-left">
             {images1.map((item, index) => (
-              <div
+              <div key={index}
                 className="hero-card"
-                key={index}
-                style={{
-                  backgroundImage: `url(${item})`,
-                  objectFit: `cover`,
-                  backgroundPosition: `center`,
-                }}
+                style={{ backgroundImage: `url(${item})` }}
               >
                 <h4>some Post</h4>
                 <p className="hero-card-time">14:08</p>
@@ -80,8 +117,8 @@ const Home = () => {
           <div className="hero-pg-right-left">
             {images2.map((item, index) => (
               <div
+              key={index}
                 className="hero-card"
-                key={index}
                 style={{
                   backgroundImage: `url(${item})`,
                   objectFit: `cover`,
@@ -104,108 +141,23 @@ const Home = () => {
           </div>
         </div>
         <div className="cards-page-left">
-          <div className="left-card">
-            <div className="left-card-img"></div>
-            <div className="card-right">
-              <div className="card-title-box">
-                <h6 className="cards-title">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </h6>
-              </div>
-              <div className="card-bottom">
-                <div className="topic-of-card">
-                  <img src={eye} className="eye" alt="" />
-                  <p className="cards-p">1230</p>
+          {data.map((card) => (
+            <div className="left-card" onClick={() => openDetail(card.id)} key={card.id}>
+              <div className="left-card-img"></div>
+              <div className="card-right">
+                <div className="card-title-box">
+                  <h6 className="cards-title">{card.title}</h6>
                 </div>
-                <p className="cards-time">16:32</p>
+                <div className="card-bottom">
+                  <div className="topic-of-card">
+                    <img src={eye} className="eye" alt="" />
+                    <p className="cards-p">1230</p>
+                  </div>
+                  <p className="cards-time">16:32</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="left-card">
-            <div className="left-card-img"></div>
-            <div className="card-right">
-              <div className="card-title-box">
-                <h6 className="cards-title">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </h6>
-              </div>
-              <div className="card-bottom">
-                <div className="topic-of-card">
-                  <img src={eye} className="eye" alt="" />
-                  <p className="cards-p">1230</p>
-                </div>
-                <p className="cards-time">16:32</p>
-              </div>
-            </div>
-          </div>
-          <div className="left-card">
-            <div className="left-card-img"></div>
-            <div className="card-right">
-              <div className="card-title-box">
-                <h6 className="cards-title">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </h6>
-              </div>
-              <div className="card-bottom">
-                <div className="topic-of-card">
-                  <img src={eye} className="eye" alt="" />
-                  <p className="cards-p">1230</p>
-                </div>
-                <p className="cards-time">16:32</p>
-              </div>
-            </div>
-          </div>
-          <div className="left-card">
-            <div className="left-card-img"></div>
-            <div className="card-right">
-              <div className="card-title-box">
-                <h6 className="cards-title">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </h6>
-              </div>
-              <div className="card-bottom">
-                <div className="topic-of-card">
-                  <img src={eye} className="eye" alt="" />
-                  <p className="cards-p">1230</p>
-                </div>
-                <p className="cards-time">16:32</p>
-              </div>
-            </div>
-          </div>
-          <div className="left-card">
-            <div className="left-card-img"></div>
-            <div className="card-right">
-              <div className="card-title-box">
-                <h6 className="cards-title">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </h6>
-              </div>
-              <div className="card-bottom">
-                <div className="topic-of-card">
-                  <img src={eye} className="eye" alt="" />
-                  <p className="cards-p">1230</p>
-                </div>
-                <p className="cards-time">16:32</p>
-              </div>
-            </div>
-          </div>
-          <div className="left-card">
-            <div className="left-card-img"></div>
-            <div className="card-right">
-              <div className="card-title-box">
-                <h6 className="cards-title">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </h6>
-              </div>
-              <div className="card-bottom">
-                <div className="topic-of-card">
-                  <img src={eye} className="eye" alt="" />
-                  <p className="cards-p">1230</p>
-                </div>
-                <p className="cards-time">16:32</p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

@@ -81,7 +81,7 @@ const Liked = () => {
           </div>
         </div>
       </div>
-      <Recommended/>
+      <Recommended />
     </section>
   );
 };

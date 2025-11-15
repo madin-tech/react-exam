@@ -44,7 +44,7 @@ const Footer = () => {
             <img src={telegram} alt="" />
             <img src={twitter} alt="" />
           </div>
-          <div className="footer-download" >
+          <div className="footer-download">
             <svg
               width="122"
               height="42"
@@ -251,7 +251,7 @@ const Footer = () => {
               </defs>
             </svg>
           </div>
-          <svg 
+          <svg
             width="41"
             height="28"
             viewBox="0 0 41 28"
