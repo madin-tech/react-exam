@@ -8,7 +8,7 @@ import { Context } from './context/Context';
 const App = () => {
   return (
     <>
-      <context.Provider>
+      <Context.Provider>
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
@@ -16,7 +16,7 @@ const App = () => {
             <Route path="/likes" element={<Liked />} />
           </Route>
         </Routes>
-      </context.Provider>
+      </Context.Provider>
     </>
   );
 }
