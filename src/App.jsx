@@ -3,12 +3,13 @@ import Home from "./pages/Home";
 import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import Detail from './pages/Detail';
+import Liked from './pages/Liked';
 const App = () => {
   return (
     <>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Detail />} />
+          <Route path="/" element={<Liked />} />
         </Route>
       </Routes>
     </>

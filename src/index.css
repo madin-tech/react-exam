@@ -618,8 +618,9 @@ padding-bottom: 35px;
 .rec-cards{
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 15px;
   margin-top: 20px;
+
 }
 .recommended{
         background-color: var(--nav-bg);
@@ -640,4 +641,58 @@ padding-bottom: 35px;
 }
 .rec-title-box{
   width: 220px;
+}
+.liked-card-img{
+  height: 240px;
+  width: 240px;
+  background-color: yellow;
+  border-radius: 8px;
+}
+.liked-card-title{
+  font-size: 20px;
+   
+}
+.liked-card{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+}
+.liked-cards{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+          background-color: var(--nav-bg);
+            border: 1px solid var(--grey-400);
+            border-radius: 8px;
+            padding: 8px 10px;
+            max-width: 800px;
+            padding-bottom: 20px;
+}
+.liked-card-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: green;
+  width: 600px;
+  padding: 10px 20px;
+}
+
+.liked-card-description {
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      cursor: pointer;
+    }
+.liked-card-description:hover{
+  color: var(--base-red);
+  transition: all 0.3s ease;
+}
+.liked-pg{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 50px;
 }
