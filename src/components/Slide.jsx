@@ -39,7 +39,7 @@ const Slide = ({ data }) => {
                 fill="white"
               ></path>
             </svg>
-            <div style={{ display: `flex`, flexDirection: `row`, gap: `5px` }}>
+            <div style={{ display: `flex`, flexDirection: `row`, gap: `5px`, cursor:`pointer` }}>
               <h6>Barchasi</h6>
               <img className="vector" src={whiteArrow} alt="" />
             </div>

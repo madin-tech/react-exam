@@ -8,9 +8,6 @@ import { Newcontext } from "./Newcontext/Newcontext";
 
 const App = () => {
 const [liked, setLiked] = useState([]);
-
-
-
   return (
     <>
       <Newcontext.Provider value={{ liked, setLiked }}>
