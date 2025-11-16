@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import eye from "../assets/eye-solid-full (1).svg";
 import { posts } from "../recommended/rec";
 const Recommended = () => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className="recommended">
@@ -14,8 +14,8 @@ const Recommended = () => {
               className="detail-recomended-img"
               style={{
                 backgroundImage: `url(https://picsum.photos/400?random=${post.id})`,
-                backgroundSize:`cover`,
-                backgroundPosition:`center`
+                backgroundSize: `cover`,
+                backgroundPosition: `center`,
               }}
             ></div>
             <div className="rec-texts">

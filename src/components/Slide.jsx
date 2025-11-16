@@ -1,4 +1,3 @@
-
 import whiteArrow from "../assets/arrow-white.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -6,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 
-const Slide = ({data}) => {
+const Slide = ({ data }) => {
   return (
     <>
       <div className="slide-out">
@@ -50,10 +49,9 @@ const Slide = ({data}) => {
             spaceBetween={30}
             pagination={{
               clickable: true,
-              
             }}
             autoplay={{
-                delay: 4000,
+              delay: 4000,
             }}
             modules={[Pagination, Autoplay]}
             className="secondSwiper"

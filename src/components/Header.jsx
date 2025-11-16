@@ -4,30 +4,24 @@ import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
- const {t, i18n} = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
-  function openLiked(){
-navigate("/likes");
+  function openLiked() {
+    navigate("/likes");
   }
 
-  useEffect(()=>{
-  const currLang =  localStorage.getItem("lang");
-   i18n.changeLanguage(currLang);
+  useEffect(() => {
+    const currLang = localStorage.getItem("lang");
+    i18n.changeLanguage(currLang);
+  }, [i18n]);
 
-   
-  },[i18n])
-
-  function handleChange(e){
-
-i18n.changeLanguage(e.target.value);
-localStorage.setItem("lang",e.target.value);
-
-  
+  function handleChange(e) {
+    i18n.changeLanguage(e.target.value);
+    localStorage.setItem("lang", e.target.value);
   }
-function openHome(){
-  navigate("/");
-}
- 
+  function openHome() {
+    navigate("/");
+  }
 
   return (
     <header>
@@ -39,7 +33,7 @@ function openHome(){
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           onClick={openHome}
-          style={{cursor:`pointer`}}
+          style={{ cursor: `pointer` }}
         >
           <path
             className="qalampir-svg"
@@ -123,7 +117,12 @@ function openHome(){
                 fill="black"
               />
             </svg>
-            <select name="" value={i18n.language} id="" onChange={(e) => handleChange(e)}>
+            <select
+              name=""
+              value={i18n.language}
+              id=""
+              onChange={(e) => handleChange(e)}
+            >
               <option value="uz">O'z</option>
               <option value="en">En</option>
             </select>

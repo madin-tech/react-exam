@@ -3,17 +3,28 @@ import eye from "../assets/eye2.svg";
 import Recommended from "../components/Recommended";
 import { Newcontext } from "../Newcontext/Newcontext";
 import { useTranslation } from "react-i18next";
-import noData from "../assets/no-data.png"
+import noData from "../assets/no-data.png";
 const Liked = () => {
-   const {t} = useTranslation();
-  const {liked} = useContext(Newcontext);
-
+  const { t } = useTranslation();
+  const { liked } = useContext(Newcontext);
 
   return (
     <section className="container liked-pg">
       {liked.length == 0 && (
-        <div style={{ display:`flex`, flexDirection:`column`,  alignItems:`center`, marginLeft:`180px`}}>
-          <img data-v-95589494="" style={{height:`250px`, width:`250px`}} src={noData} class="empty-page__image" />
+        <div
+          style={{
+            display: `flex`,
+            flexDirection: `column`,
+            alignItems: `center`,
+            marginLeft: `180px`,
+          }}
+        >
+          <img
+            data-v-95589494=""
+            style={{ height: `250px`, width: `250px` }}
+            src={noData}
+            class="empty-page__image"
+          />
           <h4 className="noLiked">{t("noLiked.no")}</h4>
         </div>
       )}

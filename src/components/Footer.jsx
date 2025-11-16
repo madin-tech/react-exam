@@ -7,7 +7,7 @@ import twitter from "../assets/twitter.svg";
 import youtube from "../assets/youtube.svg";
 import { useTranslation } from "react-i18next";
 const Footer = () => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   return (
     <footer>
       <div className=" footer container">
