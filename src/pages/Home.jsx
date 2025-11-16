@@ -18,6 +18,8 @@ import img7 from "../assets/img7.jpg";
 import img8 from "../assets/img8.jpg";
 import { useNavigate } from "react-router-dom";
 import Recommended from "../components/Recommended";
+import { useTranslation } from "react-i18next";
+
 
 const images1 = [img6, img7, img8];
 const images2 = [img3, img4, img5];
@@ -26,7 +28,7 @@ const Home = () => {
   const {data, isLoading, error } = useFetch("https://dummyjson.com/posts");
   const navigate = useNavigate();
 
-
+ const {t} = useTranslation();
   function openDetail(id) {
     data.map((card) => {
       if (card.id == id) {
@@ -153,7 +155,7 @@ const Home = () => {
                <div className="card-page-top">
                  <h5>Sport</h5>
                  <div className="all">
-                   <h6>Barchasi</h6>
+                   <h6>{t("barchasi.all")}</h6>
                    <img src={vector} className="vector" alt="" />
                  </div>
                </div>

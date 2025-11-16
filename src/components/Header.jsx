@@ -24,7 +24,9 @@ localStorage.setItem("lang",e.target.value);
 
   
   }
-
+function openHome(){
+  navigate("/");
+}
  
 
   return (
@@ -36,6 +38,8 @@ localStorage.setItem("lang",e.target.value);
           viewBox="0 0 160 38"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          onClick={openHome}
+          style={{cursor:`pointer`}}
         >
           <path
             className="qalampir-svg"

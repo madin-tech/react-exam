@@ -24,6 +24,9 @@
     },
       "recommended":{
       "rec":"Recommended"
+    },
+     "barchasi":{
+      "all": "All"
     }
 
 }
