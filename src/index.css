@@ -368,7 +368,6 @@ select {
 .left-card-img {
   height: 139px;
   width: 200px;
-  background-color: green;
   border-radius: 8px;
 }
 
@@ -388,7 +387,7 @@ select {
   padding-top: 26px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 50px;
 }
 
 .cards-page {
@@ -397,7 +396,6 @@ select {
   border: 1px solid var(--grey-400);
   border-radius: 8px;
   padding: 16px 24px 20px 24px;
-  margin-top: 40px;
   margin-bottom: 40px;
 }
 
@@ -537,8 +535,8 @@ select {
 
 footer {
   background-color: var(--secondary);
-  padding: 48px 0;
-  margin-bottom: 25px;
+  padding: 55px 0;
+ margin-bottom: 25px;
 }
 
 .footer-texts p {
@@ -712,9 +710,13 @@ footer {
   background-color: var(--nav-bg);
   border: 1px solid var(--grey-400);
   border-radius: 8px;
-  padding: 8px 10px;
+  padding: 20px 10px;
   width: 380px;
   margin-bottom: 40px;
+  height: 980px;
+}
+.recommended h4{
+  color: var(--base-red);
 }
 
 .detail-right h4 {
@@ -768,7 +770,6 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: green;
   width: 600px;
   padding: 10px 20px;
 }
@@ -796,5 +797,68 @@ footer {
 .loadingCards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 50px;
+}
+
+.slide-out,
+.slide-in{
+  position: relative;
+  height: 100%;
+}
+.slide-out{
+  margin-bottom: 60px;
+}
+.slide-in {
+  background: var(--base-red);
+  font-family:
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 25px;
+}
+
+.secondSwiper  {
+  width: 1300px;
+  height: 250px;
+}
+
+.secondSwiper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.secondSwiper .swiper-pagination {
+  display: none !important;
+}
+.secondSwiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.qalampir{
+  display: flex;
+  flex-direction: row;
+justify-content: space-between;
+  padding: 20px 0px;
+}
+.home-box{
+  display: flex;
+  flex-direction: row;
+ gap: 50px;
+  margin-top: 60px;
 }

@@ -1,6 +1,32 @@
-import { Link } from "react-router-dom";
+import i18n from "../i18n";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
+ const {t, i18n} = useTranslation();
+  const navigate = useNavigate();
+  function openLiked(){
+navigate("/likes");
+  }
+
+  useEffect(()=>{
+  const currLang =  localStorage.getItem("lang");
+   i18n.changeLanguage(currLang);
+
+   
+  },[i18n])
+
+  function handleChange(e){
+
+i18n.changeLanguage(e.target.value);
+localStorage.setItem("lang",e.target.value);
+
+  
+  }
+
+ 
+
   return (
     <header>
       <div className="header-top container header">
@@ -78,6 +104,7 @@ const Header = () => {
               ></path>
             </svg>
             <svg
+              onClick={openLiked}
               className="heart"
               width="10"
               height="10"
@@ -92,7 +119,7 @@ const Header = () => {
                 fill="black"
               />
             </svg>
-            <select name="" id="">
+            <select name="" value={i18n.language} id="" onChange={(e) => handleChange(e)}>
               <option value="uz">O'z</option>
               <option value="en">En</option>
             </select>
@@ -121,13 +148,13 @@ const Header = () => {
           </select>
         </div>
         <div className="header-bottom-links">
-          <Link to="">Jamiyat</Link>
-          <Link to="">Olam</Link>
-          <Link to="">Madaniyat-san'at</Link>
-          <Link to="">Intervyu</Link>
-          <Link to="">Foydali</Link>
-          <Link to="">Sport</Link>
-          <Link to="">Tahlil</Link>
+          <Link to="">{t("header.jamiyat")}</Link>
+          <Link to="">{t("header.olam")}</Link>
+          <Link to="">{t("header.madaniyat")}</Link>
+          <Link to="">{t("header.intervyu")}</Link>
+          <Link to="">{t("header.foydali")}</Link>
+          <Link to="">{t("header.sport")}</Link>
+          <Link to="">{t("header.tahlil")}</Link>
         </div>
       </div>
     </header>

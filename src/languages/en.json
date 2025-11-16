@@ -1,5 +1,29 @@
 {
-    "en":{
-      
+    "header":{
+      "jamiyat": "People",
+      "olam": "World",
+      "madaniyat": "Culture",
+      "intervyu":"Interview",
+      "foydali":"Beneficial",
+      "sport":"Sport",
+      "tahlil":"Analysis"
+    },
+    "footer":{
+      "tarix":"The website was registered as a media outlet on October 26, 2018, with the Agency for Information and Mass Communications under the Administration of the President of the Republic of Uzbekistan under number 1089.",
+      "muassis":"\" QALAMPIR \" MCHJ",
+      "manzil": "Editorial office address: Tashkent city, Beruniy street, 88.Email: info@qalampir.uz",
+      "elektron":"Email address: info@qalampir.uz ",
+      "copyright":"© Copyright 2025 Qalampir - The truth is bitter.",
+      "haqida":"About site",
+      "biznes":"Business",
+      "aloqa":"Contact",
+      "arhiv":"Archive"
+    },
+    "noLiked":{
+      "no":"No liked posts yet"
+    },
+      "recommended":{
+      "rec":"Recommended"
     }
+
 }

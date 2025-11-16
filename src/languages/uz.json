@@ -1,0 +1,29 @@
+{
+    "header":{
+      "jamiyat": "Jamiyat",
+      "olam": "Olam",
+      "madaniyat": "Madaniyat",
+      "intervyu":"Intervyu",
+      "foydali":"Foydali",
+      "sport":"Sport",
+      "tahlil":"Tahlil"
+    },
+    "footer":{
+      "tarix":"Veb-sayt OAV sifatida 2018 yil 26 oktyabr kuni O'zbekiston Respublikasi  Prezident Administratsiyasi huzuridagi ahborot va ommaviy kommunikatsiyalar agentligidan 1089 raqam bilan ro'yhatga olingan",
+      "muassis":"\" QALAMPIR \" MCHJ",
+      "manzil": "Tahririyat manzili: Toshkent Shahri, Beruniy ko'chasi, 88-uy",
+      "elektron":"Elektron manzil: info@qalampir.uz ",
+      "copyright":"© Copyright 2025 Qalampir - Haqiqat achchiq bo'ladi.",
+      "haqida":"Sayt haqida",
+      "biznes":"Biznes",
+      "aloqa":"Aloqa",
+      "arhiv":"Arhiv"
+    },
+    "noLiked":{
+      "no":"Postlar hali mavjud emas"
+    },
+    "recommended":{
+      "rec":"O'hshash postlar"
+    }
+
+}

@@ -5,7 +5,9 @@ import telegram from "../assets/telegram.svg";
 import instagram from "../assets/instagram.svg";
 import twitter from "../assets/twitter.svg";
 import youtube from "../assets/youtube.svg";
+import { useTranslation } from "react-i18next";
 const Footer = () => {
+  const {t} = useTranslation();
   return (
     <footer>
       <div className=" footer container">
@@ -14,26 +16,23 @@ const Footer = () => {
 
           <div className="footer-texts">
             <div className="footer-links">
-              <Link to="">Sayt Haqida</Link>
-              <Link to="">Biznes</Link>
-              <Link to="">Aloqa</Link>
-              <Link to="">Arxiv</Link>
+              <Link to="">{t("footer.haqida")}</Link>
+              <Link to="">{t("footer.biznes")}</Link>
+              <Link to="">{t("footer.aloqa")}</Link>
+              <Link to="">{t("footer.arhiv")}</Link>
             </div>
-            <p>
-              QALAMPIR.UZ <br />
-              Веб-сайт ОАВ сифатида 2018 йил 26 октябрь куни Ўзбекистон
-              Республикаси <br /> Президенти Администрацияси ҳузуридаги Ахборот
-              ва оммавий коммуникациялар <br /> агентлигидан 1089 рақам билан
-              рўйхатга олинган.
-            </p>
-            <p>Муассис: “QALAMPIR” МЧЖ.</p>
-            <p>
-              Таҳририят манзили: Тошкент шаҳри, Беруний кўчаси, 88-уй. <br />{" "}
-              Электрон манзил: info@qalampir.uz
-            </p>
-            <p className="footer-last-text">
-              © Copyright 2025 Qalampir - Ҳақиқат аччиқ бўлади.
-            </p>
+            <div style={{ paddingRight: `160px` }}>
+              <p>
+                QALAMPIR.UZ <br />
+                {t("footer.tarix")}
+              </p>
+            </div>
+            <p>{t("footer.muassis")}</p>
+            <div style={{ display: `flex`, flexDirection: `column` }}>
+              <p style={{ margin: `0` }}>{t("footer.manzil")}</p>
+              <p style={{ margin: `0` }}>{t("footer.elektron")}</p>
+            </div>
+            <p className="footer-last-text">{t("footer.copyright")}</p>
           </div>
         </div>
         <div className="footer-right">
