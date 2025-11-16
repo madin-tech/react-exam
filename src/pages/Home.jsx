@@ -24,7 +24,7 @@ const images1 = [img6, img7, img8];
 const images2 = [img3, img4, img5];
 
 const Home = () => {
-  const { data, isLoading, error } = useFetch("https://dummyjson.com/posts");
+  const { data, isLoading } = useFetch("https://dummyjson.com/posts");
   const navigate = useNavigate();
 
   const { t } = useTranslation();

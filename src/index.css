@@ -182,7 +182,10 @@ select {
   color: var(--grey-200);
   text-decoration: none;
 }
-
+.header-bottom-links a:hover{
+color: var(--base-red);
+transition: all 0.4s ease;
+}
 
 
 .html,
@@ -558,9 +561,19 @@ footer {
   flex-direction: row;
   gap: 10px;
   align-items: center;
-  margin-bottom: 10px;
+ 
 }
-
+.tags{
+    display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+     
+      
+}
+.tags h6{
+  margin: 0 !important;
+}
 .detail-count {
   display: flex;
   flex-direction: row;

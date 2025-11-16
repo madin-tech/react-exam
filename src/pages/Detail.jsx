@@ -11,13 +11,15 @@ import Slide from "../components/Slide";
 
 const Detail = () => {
   const { data, isLoading, error } = useFetch("https://dummyjson.com/posts");
+  
   const param = useParams();
   const { liked, setLiked } = useContext(Newcontext);
-
+  
   let paramId = param.id;
-  const cardDetail = data?.find((item) => item.id == paramId);
+  let cardDetail = data?.find((item) => item.id == paramId);
   console.log(cardDetail);
-
+  
+ 
   let isInLiked = liked.find((post) => post.id == cardDetail.id);
   function addLiked(id) {
     const inLiked = liked.find((post) => post.id == id);
@@ -66,7 +68,12 @@ const Detail = () => {
               <div className="detail-info">
                 <div className="detail-count">
                   <img src={eye} className="eye" alt="" />
-                  <p></p>
+                  <p>{cardDetail?.views}</p>
+                </div>
+                <div className="tags">
+                  {cardDetail?.tags.map((tag, index) => (
+                    <h6 key={index}>{tag}</h6>
+                  ))}
                 </div>
               </div>
               <img
@@ -76,7 +83,7 @@ const Detail = () => {
                 title="image"
               />
               <div className="detail-description-box">
-                <h5 className="detail-description"></h5>
+                <h5 className="detail-description">{cardDetail?.body}</h5>
               </div>
               <div className="detail-bottom">
                 <div className="detail-bottom-author">
@@ -153,7 +160,7 @@ const Detail = () => {
 
                   <div className="like-box">
                     <img className="like" src={like} alt="" />
-                    <p></p>
+                    <p>{cardDetail?.reactions.likes}</p>
                   </div>
                   <img className="dislike" src={dislike} alt="" />
                 </div>
@@ -161,7 +168,7 @@ const Detail = () => {
             </div>
             <Recommended />
           </section>
-          <Slide />
+          <Slide data={data} />
         </>
       )}
     </>
