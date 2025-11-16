@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext} from "react";
 import eye from "../assets/eye2.svg";
 import Recommended from "../components/Recommended";
 import { Newcontext } from "../Newcontext/Newcontext";
@@ -23,7 +23,7 @@ const Liked = () => {
             data-v-95589494=""
             style={{ height: `250px`, width: `250px` }}
             src={noData}
-            class="empty-page__image"
+            className="empty-page__image"
           />
           <h4 className="noLiked">{t("noLiked.no")}</h4>
         </div>

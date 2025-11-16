@@ -9,7 +9,6 @@ import useFetch from "../hooks/useFetch";
 import { Autoplay, Pagination } from "swiper/modules";
 import Slide from "../components/Slide";
 import img1 from "../assets/img1.jpg";
-import img2 from "../assets/img2.jpg";
 import img3 from "../assets/img3.jpg";
 import img4 from "../assets/img4.jpg";
 import img5 from "../assets/img5.jpg";
@@ -20,6 +19,7 @@ import { useNavigate } from "react-router-dom";
 import Recommended from "../components/Recommended";
 import { useTranslation } from "react-i18next";
 
+
 const images1 = [img6, img7, img8];
 const images2 = [img3, img4, img5];
 
@@ -28,6 +28,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const { t } = useTranslation();
+
   function openDetail(id) {
     data.map((card) => {
       if (card.id == id) {

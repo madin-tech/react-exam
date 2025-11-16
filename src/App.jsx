@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
@@ -7,7 +7,9 @@ import Liked from "./pages/Liked";
 import { Newcontext } from "./Newcontext/Newcontext";
 
 const App = () => {
-  const [liked, setLiked] = useState([]);
+const [liked, setLiked] = useState([]);
+
+
 
   return (
     <>

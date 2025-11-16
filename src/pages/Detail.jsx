@@ -17,10 +17,10 @@ const Detail = () => {
   
   let paramId = param.id;
   let cardDetail = data?.find((item) => item.id == paramId);
-  console.log(cardDetail);
-  
+
+
  
-  let isInLiked = liked.find((post) => post.id == cardDetail.id);
+  let isInLiked = liked.find((post) => post.id == cardDetail?.id);
   function addLiked(id) {
     const inLiked = liked.find((post) => post.id == id);
     if (!inLiked) {
@@ -29,9 +29,10 @@ const Detail = () => {
       const filtered = liked.filter((p) => p.id !== id);
       setLiked(filtered);
     }
+   
   }
-
-  if (error) return <h1 className="container">{error}</h1>;
+   console.log(liked);
+  if (error) return <h1 className="container" style={{marginBottom:`40px`}}>{error}</h1>;
   return (
     <>
       {isLoading ? (
