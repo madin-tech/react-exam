@@ -862,3 +862,6 @@ justify-content: space-between;
  gap: 50px;
   margin-top: 60px;
 }
+.noLiked{
+  color: var(--base-red);
+}
